@@ -1,9 +1,10 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeNavigator from './HomeNavigator';
 import { Foundation, Ionicons, MaterialCommunityIcons, AntDesign, FontAwesome } from '@expo/vector-icons'
 import CustomTabBarButton from '../components/CustomTabBarButton';
+import MyPostsNavigator from './MyPostsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -74,7 +75,7 @@ const TabNavigator = () => {
             />
             <Tab.Screen
                 name="İlanlarım"
-                component={HomeNavigator}
+                component={MyPostsNavigator}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <AntDesign name="appstore1" size={24} color={color} />

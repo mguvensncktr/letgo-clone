@@ -11,6 +11,7 @@ export default [{
     "description": "Apple iPhone 13 Pro Max 256GB 6.7 inç ekran gelişmiş çift kamera",
     "category": 1,
     "countInStock": 25,
+    "type": "share"
   },{
     id: '6',
     "image": "https://cdn.dsmcdn.com/mnresize/500/-/ty32/product/media/images/20210326/23/75554837/108939192/1/1_org.jpg",
@@ -24,6 +25,7 @@ export default [{
     "description": "Sony PS5 Standart Edition SSD Oyun Konsolu 1TB 2 Kol Hediyeli",
     "category": 2,
     "countInStock": 10,
+    "type": "info"
   },{
     id: '7',
     "image": "https://s.turkcell.com.tr/SiteAssets/Cihaz/aksesuar/Apple/airpods-3-nesil/cg/1.png",
@@ -38,6 +40,7 @@ export default [{
     "description": "Apple AirPods 3. Nesil Bluetooth Kulaklık",
     "category": 3,
     "countInStock": 10,
+    "type": "share"
   },{
     id: '8',
     "image": "https://cdn.akakce.com/beats/beats-studio3-wireless-anc-aktif-gurultu-onleyici-kablosuz-kulak-ustu-kulaklik-z.jpg",
@@ -52,6 +55,7 @@ export default [{
     "description": "Beats Studio 3 Wireless Kulak Üstü Kulaklık Siyah",
     "category": 4,
     "countInStock": 5,
+    "type": "info"
   },{
     id: '9',
     "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_MacBook-Pro_16-inch-Screen_10182021_big_carousel.jpg.slideshow-xlarge_2x.jpg",
@@ -65,6 +69,7 @@ export default [{
     "description": "Apple Macbook Pro 2021 16 inç 10 çekirdekli CPU 16 çekirdekli GPU 16 GB Birleşik Bellek 512 GB SSD Depolama",
     "category": 2,
     "countInStock": 2,
+    "type": "share"
   },{
     id: '10',
     "image": "https://smartcdkeys.com/image/data/products/fifa-22/cover/fifa-22-ps5-smartcdkeys-cheap-cd-key-cover.jpg",
@@ -78,4 +83,5 @@ export default [{
     "description": "Fifa 2022 PlayStation 5 Konsol Oyunu Orijinal",
     "category": 3,
     "countInStock": 2,
+    "type": "info"
   }]
