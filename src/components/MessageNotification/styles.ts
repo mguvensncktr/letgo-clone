@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:'#2C2C2C',   
         width: width,
-        height: 45,
+        height: 40,
         justifyContent:'center',
         paddingHorizontal: 12,
     },

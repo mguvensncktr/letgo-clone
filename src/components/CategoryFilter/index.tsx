@@ -23,9 +23,9 @@ const CategoryFilter = () => {
             showsHorizontalScrollIndicator={false}
             style={styles.container}
         >
-            {categories.map((item) => {
+            {categories.map((item, index) => {
                 return (
-                    <CategoryItem category={item} />
+                    <CategoryItem category={item} key={index} />
                 )
             })}
         </ScrollView>
