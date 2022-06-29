@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
     categoryImage:{
-        width: 54,
-        height: 54,
-        borderRadius: 27
+        width: 52,
+        height: 52,
+        borderRadius: 26
     },
     container:{
         alignItems:'center',
@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     categoryText:{
-        fontSize: 14,
-        fontWeight: 'bold',
+        fontSize: 10,
+        fontWeight: '800',
         color: '#767575'
     }
 })

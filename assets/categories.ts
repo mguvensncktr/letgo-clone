@@ -26,7 +26,37 @@ export default [
   },
   {
     id: "6",
-    name: "Giyim",
+    name: "Moda ve Aksesuarlar",
+    src: require("../assets/categoryGiyim.png"),
+  },
+  {
+    id: "7",
+    name: "Bebek ve Çocuk",
+    src: require("../assets/categoryGiyim.png"),
+  },
+  {
+    id: "8",
+    name: "Araba Parçaları",
+    src: require("../assets/categoryGiyim.png"),
+  },
+  {
+    id: "8",
+    name: "Bahçe Aletleri",
+    src: require("../assets/categoryGiyim.png"),
+  },,
+  {
+    id: "9",
+    name: "Oyun",
+    src: require("../assets/categoryGiyim.png"),
+  },
+  {
+    id: "10",
+    name: "Film, Kitap ve Müzikler",
+    src: require("../assets/categoryGiyim.png"),
+  },
+  {
+    id: "11",
+    name: "Diğer",
     src: require("../assets/categoryGiyim.png"),
   }
 ];
