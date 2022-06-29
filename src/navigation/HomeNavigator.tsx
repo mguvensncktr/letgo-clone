@@ -14,7 +14,7 @@ const HomeNavigator = () => {
                 component={HomeScreen}
                 options={{
                     headerLeft: () => (
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => console.log("Profile pressed")}>
                             <Image source={{ uri: 'https://m.media-amazon.com/images/I/41pJJNWD8lL._AC_SY780_.jpg' }}
                                 resizeMode="cover"
                                 style={{ width: 30, height: 30, borderRadius: 15 }} />
@@ -29,7 +29,7 @@ const HomeNavigator = () => {
                         </View>
                     ),
                     headerRight: () => (
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => console.log("Filters pressed")}>
                             <Text style={{ color: '#F24E61', fontSize: 18, fontWeight: 'bold' }}>Filtrele</Text>
                         </TouchableOpacity>
                     ),
