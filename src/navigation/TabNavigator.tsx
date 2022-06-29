@@ -16,7 +16,7 @@ const TabNavigator = () => {
                 tabBarInactiveTintColor: "#959595",
                 headerShown: false,
                 tabBarStyle: {
-                    height: 80
+                    height: 50
                 },
             }
             }
