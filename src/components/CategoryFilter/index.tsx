@@ -23,7 +23,7 @@ const CategoryFilter = () => {
             showsHorizontalScrollIndicator={false}
             style={styles.container}
         >
-            {categories.map((item, index) => {
+            {categories.map((item: Category, index) => {
                 return (
                     <CategoryItem category={item} key={index} />
                 )

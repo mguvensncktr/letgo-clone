@@ -8,22 +8,18 @@ export default [{
 },
 {
     id:'4',
-    "name":"Tüm teslimat yöntemleri"
-},
-{
-    id:'5',
     "name":"Fiyat"
 },
 {
-    id:'6',
+    id:'5',
     "name":"Durum"
 },
 {
-    id:'7',
+    id:'6',
     "name":"Akıllı Sıralama"
 },
 {
-    id:'8',
+    id:'7',
     "name":"Bütün ilanlar"
 },
 

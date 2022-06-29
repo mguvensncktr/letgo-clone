@@ -21,7 +21,7 @@ const HomeScreen = () => {
             <MessageNotification />
             <CategoryFilter />
             <FeaturedProducts featuredProducts={productList} />
-            <MainProducts mainProducts={productList} />
+            <MainProducts mainProducts={productList} header={"Keçiören"} isFiltered />
         </ScrollView>
     )
 }

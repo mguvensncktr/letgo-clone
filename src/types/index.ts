@@ -18,3 +18,8 @@ export interface Category {
     name: string,
     src: any,
 }
+
+export interface Filtering {
+    id: string,
+    name: string
+}
