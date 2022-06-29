@@ -14,13 +14,19 @@ const TabNavigator = () => {
             initialRouteName='Ana Sayfa'
             screenOptions={{
                 tabBarHideOnKeyboard: true,
-                tabBarShowLabel: false,
+                tabBarShowLabel: true,
                 tabBarActiveTintColor: "#F24E61",
                 tabBarInactiveTintColor: "#959595",
                 headerShown: false,
                 tabBarStyle: {
-                    height: 50
+                    height: 50,
+                    borderTopWidth: 0
                 },
+                tabBarLabelStyle: {
+                    marginTop: -10,
+                    marginBottom: 5,
+                    fontSize: 10
+                }
             }
             }
         >
