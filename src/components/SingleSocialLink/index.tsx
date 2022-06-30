@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Feather, AntDesign, FontAwesome, Entypo } from '@expo/vector-icons';
+import styles from './styles';
 
 const SingleSocialLink = ({ bgColor, iconName, type }: { bgColor: string, iconName: string, type: string }) => {
 
@@ -29,16 +30,7 @@ const SingleSocialLink = ({ bgColor, iconName, type }: { bgColor: string, iconNa
     }
 
     return (
-        <TouchableOpacity style={{
-            width: 40,
-            height: 40,
-            borderRadius: 20,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: bgColor,
-            marginHorizontal: 6,
-            marginTop: 10
-        }}
+        <TouchableOpacity style={[styles.container, { backgroundColor: bgColor }]}
             onPress={() => console.log("Social media pressed", type)}
         >
             <Vector name={iconName} size={22} color={"white"} />

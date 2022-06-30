@@ -1,20 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import SingleSocialLink from '../SingleSocialLink';
+import styles from './styles';
 
 const ShareProductLinks = () => {
     return (
-        <View style={{
-            marginTop: 25
-        }}>
+        <View style={styles.container}>
             <Text>Bu ilanı paylaş</Text>
             <View
-                style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    marginTop: 10,
-                    flexWrap: 'wrap'
-                }}
+                style={styles.innerContainer}
             >
                 <SingleSocialLink bgColor={"#39ff5a"} iconName={"message-circle"} type={"message"} />
                 <SingleSocialLink bgColor={"#4267B2"} iconName={"facebook-f"} type={"facebook"} />
