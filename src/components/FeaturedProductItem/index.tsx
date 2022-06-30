@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styles from './styles'
 import { Product } from '../../types'
 import { AntDesign } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 
 type productProps = {
     product: Product,
@@ -13,12 +14,14 @@ const FeaturedProductItem = ({ product, prodType }: productProps) => {
 
     const [isLiked, setIsLiked] = useState<boolean>(false);
 
+    const navigation = useNavigation();
+
     const likeProduct = () => {
         setIsLiked(!isLiked)
     }
 
     return (
-        <TouchableOpacity style={prodType === "main" ? styles.mainProductContainer : styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", { product, prodType })} style={prodType === "main" ? styles.mainProductContainer : styles.container}>
             <View style={prodType === "main" ? styles.mainProductImageContainer : styles.imageContainer}>
                 <Image
                     source={{ uri: product.image }}

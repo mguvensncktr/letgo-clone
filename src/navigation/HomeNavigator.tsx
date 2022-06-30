@@ -5,6 +5,7 @@ import { Ionicons, Feather } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import CategoryScreen from '../screens/CategoryScreen';
 import { useNavigation } from '@react-navigation/native';
+import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,13 @@ const HomeNavigator = () => {
                         </TouchableOpacity>
                     ),
 
+                }}
+            />
+            <Stack.Screen
+                name="ProductDetails"
+                component={ProductDetailsScreen}
+                options={{
+                    headerShown: false
                 }}
             />
             <Stack.Screen
