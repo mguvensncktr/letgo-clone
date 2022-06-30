@@ -11,7 +11,13 @@ export interface Product {
     description?: string,
     category: number,
     countInStock: number,
-    type: string
+    type: string,
+    time: number,
+    seller: {
+        name: string,
+        rating: number,
+        photo: string
+    }
 }
 
 export interface Category {

@@ -5,6 +5,7 @@ import { Product } from '../../types'
 import { FontAwesome, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import ImageCarousel from '../../components/ImageCarousel'
 import { useNavigation } from '@react-navigation/native';
+import ProductDescription from '../../components/ProductDescription';
 
 const ProductDetailsScreen = (props: any) => {
 
@@ -35,6 +36,7 @@ const ProductDetailsScreen = (props: any) => {
                     </TouchableOpacity>
                 </View>
             </View>
+            <ProductDescription product={product} />
         </ScrollView>
     )
 }
