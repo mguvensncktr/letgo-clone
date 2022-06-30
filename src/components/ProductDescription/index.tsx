@@ -4,6 +4,7 @@ import { Product } from '../../types'
 import { FontAwesome, AntDesign, FontAwesome5, Foundation } from '@expo/vector-icons';
 import styles from './styles';
 import SellerProfile from '../SellerProfile';
+import SellerAddressMap from '../../components/SellerAddressMap';
 
 const ProductDescription = ({ product }: { product: Product }) => {
     return (
@@ -40,6 +41,7 @@ const ProductDescription = ({ product }: { product: Product }) => {
                 </Text>
             </View>
             <SellerProfile seller={product.seller} />
+            <SellerAddressMap seller={product.seller} />
         </View>
     )
 }

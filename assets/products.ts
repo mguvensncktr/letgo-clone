@@ -16,7 +16,10 @@ export default [{
     seller:{
       "name": "Murat",
       "rating": 5,
-      "photo": "https://img1.picmix.com/output/stamp/normal/4/5/0/7/1807054_a6894.png"
+      "photo": "https://img1.picmix.com/output/stamp/normal/4/5/0/7/1807054_a6894.png",
+      "lat": 40.021062,
+      "long": 32.831015,
+      "city": "Keçiören"
     }
   },{
     id: '6',
@@ -36,7 +39,10 @@ export default [{
     seller:{
       "name": "Güven",
       "rating": 4,
-      "photo": "https://m.media-amazon.com/images/I/41Q8uAgjATS._AC_SY1000_.jpg"
+      "photo": "https://m.media-amazon.com/images/I/41Q8uAgjATS._AC_SY1000_.jpg",
+      "lat": 39.92077,
+      "long": 32.85411,
+      "city": "Ankara"
     }
   },{
     id: '7',
@@ -57,7 +63,10 @@ export default [{
     seller:{
       "name": "Batın",
       "rating": 1,
-      "photo": "https://data.topquizz.com/distant/quizz/big/0/8/8/6/216880_360c632769.jpg"
+      "photo": "https://data.topquizz.com/distant/quizz/big/0/8/8/6/216880_360c632769.jpg",
+      "lat": 39.92077,
+      "long": 32.85411,
+      "city": "Ankara"
     }
   },{
     id: '8',
@@ -78,7 +87,10 @@ export default [{
     seller:{
       "name": "Furkan",
       "rating": 2,
-      "photo": "https://img.joomcdn.net/e579c6b30b3add8cdf2d7c07f25596505ac8b05c_original.jpeg"
+      "photo": "https://img.joomcdn.net/e579c6b30b3add8cdf2d7c07f25596505ac8b05c_original.jpeg",
+      "lat": 40.009268,
+      "long": 32.983337,
+      "city": "Altındağ"
     }
   },{
     id: '9',
@@ -98,7 +110,10 @@ export default [{
     seller:{
       "name": "Osman",
       "rating": 3,
-      "photo": "https://i.pinimg.com/474x/a3/88/d8/a388d84a4630b8456571fa1b24dbce1c--shikamaru-and-temari-ravenclaw.jpg"
+      "photo": "https://i.pinimg.com/474x/a3/88/d8/a388d84a4630b8456571fa1b24dbce1c--shikamaru-and-temari-ravenclaw.jpg",
+      "lat": 39.924444,
+      "long": 32.885556,
+      "city": "Çankaya"
     }
   },{
     id: '10',
@@ -118,6 +133,9 @@ export default [{
     seller:{
       "name": "Murat",
       "rating": 5,
-      "photo": "https://img1.picmix.com/output/stamp/normal/4/5/0/7/1807054_a6894.png"
+      "photo": "https://img1.picmix.com/output/stamp/normal/4/5/0/7/1807054_a6894.png",
+      "lat": 40.021062,
+      "long": 32.831015,
+      "city": "Keçiören"
     }
   }]

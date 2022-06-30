@@ -13,7 +13,7 @@ const ProductDetailsScreen = (props: any) => {
     const navigation = useNavigation()
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             {/* Image Carousel */}
             <ImageCarousel images={product.images} />
             {/* Header */}
@@ -36,7 +36,9 @@ const ProductDetailsScreen = (props: any) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <ProductDescription product={product} />
+            <View style={styles.descriptionContainer}>
+                <ProductDescription product={product} />
+            </View>
         </ScrollView>
     )
 }

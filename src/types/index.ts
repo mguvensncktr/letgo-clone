@@ -16,7 +16,10 @@ export interface Product {
     seller: {
         name: string,
         rating: number,
-        photo: string
+        photo: string,
+        lat: number,
+        long: number,
+        city: string
     }
 }
 
