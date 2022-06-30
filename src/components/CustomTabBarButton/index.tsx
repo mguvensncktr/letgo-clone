@@ -1,20 +1,11 @@
 import { TouchableOpacity } from 'react-native'
 import React from 'react'
+import styles from './styles'
 
 const CustomTabBarButton = ({ children }: any) => {
     return (
         <TouchableOpacity
-            style={{
-                width: 60,
-                height: 60,
-                backgroundColor: '#F24E61',
-                borderRadius: 30,
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginTop: -16,
-                borderWidth: 3,
-                borderColor: 'white'
-            }}
+            style={styles.container}
             onPress={() => console.log("Sell pressed")}
         >
             {children}
