@@ -40,8 +40,8 @@ const PostsScreen = () => {
                         <View style={styles.headers}>
                             {headers.map((item, index) => {
                                 return (
-                                    <TouchableOpacity onPress={() => setActiveHeader(item)}>
-                                        <Text key={index} style={activeHeader === item ? styles.activeHeaderText : styles.inActiveHeaderText}>{item}</Text>
+                                    <TouchableOpacity key={index} onPress={() => setActiveHeader(item)}>
+                                        <Text style={activeHeader === item ? styles.activeHeaderText : styles.inActiveHeaderText}>{item}</Text>
                                         {
                                             activeHeader === item &&
                                             <View
