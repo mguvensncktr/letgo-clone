@@ -6,6 +6,7 @@ import styles from './styles';
 import SellerProfile from '../SellerProfile';
 import SellerAddressMap from '../../components/SellerAddressMap';
 import ShareProductLinks from '../ShareProductLinks';
+import CustomButton from '../CustomButton';
 
 const ProductDescription = ({ product }: { product: Product }) => {
     return (
@@ -44,6 +45,7 @@ const ProductDescription = ({ product }: { product: Product }) => {
             <SellerProfile seller={product.seller} />
             <SellerAddressMap seller={product.seller} />
             <ShareProductLinks />
+            <CustomButton text={"İlanı şikayet et"} />
         </View>
     )
 }
