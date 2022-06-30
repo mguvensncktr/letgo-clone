@@ -28,8 +28,7 @@ const TabNavigator = () => {
                     marginBottom: 5,
                     fontSize: 10
                 }
-            }
-            }
+            }}
         >
             <Tab.Screen
                 name="Ana Sayfa"

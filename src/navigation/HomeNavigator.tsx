@@ -4,14 +4,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Ionicons, Feather } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import CategoryScreen from '../screens/CategoryScreen';
-import { useNavigation } from '@react-navigation/native';
+import { getFocusedRouteNameFromRoute, useNavigation } from '@react-navigation/native';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
-const HomeNavigator = () => {
+const HomeStack = ({ navigation, route }: { navigation: any, route: any }) => {
 
-    const navigation = useNavigation();
+    const tabHiddenRoutes = ["ProductDetails"];
+
+    React.useLayoutEffect(() => {
+
+        const routeName = getFocusedRouteNameFromRoute(route);
+        if (tabHiddenRoutes.includes(routeName)) {
+            navigation.setOptions({ tabBarStyle: { display: 'none' } })
+        } else {
+            navigation.setOptions({ tabBarStyle: { display: 'true' } })
+        }
+
+    }, [navigation, route])
+
+    const navigater = useNavigation();
+
 
     return (
         <Stack.Navigator>
@@ -54,7 +68,7 @@ const HomeNavigator = () => {
                 component={CategoryScreen}
                 options={{
                     headerLeft: () => (
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <TouchableOpacity onPress={() => navigater.goBack()}>
                             <Feather name="arrow-left" size={24} color={"#959595"} />
                         </TouchableOpacity>
                     ),
@@ -77,4 +91,6 @@ const HomeNavigator = () => {
     )
 }
 
-export default HomeNavigator
+export default function HomeNavigator({ navigation, route }) {
+    return <HomeStack navigation={navigation} route={route} />
+}

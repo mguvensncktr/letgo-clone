@@ -6,6 +6,7 @@ import { FontAwesome, MaterialCommunityIcons, Entypo } from '@expo/vector-icons'
 import ImageCarousel from '../../components/ImageCarousel'
 import { useNavigation } from '@react-navigation/native';
 import ProductDescription from '../../components/ProductDescription';
+import BottomInput from '../../components/BottomInput';
 
 const ProductDetailsScreen = (props: any) => {
 
@@ -39,6 +40,7 @@ const ProductDetailsScreen = (props: any) => {
             <View style={styles.descriptionContainer}>
                 <ProductDescription product={product} />
             </View>
+            <BottomInput />
         </ScrollView>
     )
 }
