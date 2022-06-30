@@ -2,27 +2,23 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import styles from './styles'
 import { Product } from '../../types'
-import { useRoute } from '@react-navigation/native'
 import { FontAwesome, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
+import ImageCarousel from '../../components/ImageCarousel'
 
-type ProductDetailsProps = {
-    product: Product,
-    prodType: string
-}
+const ProductDetailsScreen = (props) => {
 
-const ProductDetailsScreen = () => {
-
-    const route = useRoute()
+    const [product, setProduct] = useState<Product>(props.route.params.product)
 
     return (
         <ScrollView style={styles.container}>
+            {/* Header */}
             <View style={styles.headerContainer}>
                 <View style={styles.headerLeftContainer}>
                     <TouchableOpacity style={styles.headerLeft}>
                         <FontAwesome name="close" size={24} color="white" />
                     </TouchableOpacity>
                     {
-                        route.params.prodType === "favourite" &&
+                        props.route.params.prodType === "favourite" &&
                         <TouchableOpacity style={styles.headerLeft2}>
                             <MaterialCommunityIcons name="upload" size={24} color="white" />
                             <Text style={styles.topListingText}>Top Listing</Text>
@@ -33,6 +29,8 @@ const ProductDetailsScreen = () => {
                     <Entypo name="forward" size={24} color="white" />
                 </TouchableOpacity>
             </View>
+            {/* Image Carousel */}
+            <ImageCarousel images={product.images} />
         </ScrollView>
     )
 }
