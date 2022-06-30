@@ -1,8 +1,9 @@
-import { View, Text, Dimensions } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import styles from './styles';
 
-const { width, height } = Dimensions.get('window')
+
 
 type SellerProps = {
     lat: number,
@@ -21,31 +22,12 @@ const SellerAddressMap = ({ seller }: { seller: SellerProps }) => {
                     latitudeDelta: 0,
                     longitudeDelta: 0.5,
                 }}
-                style={{
-                    width: width - 30,
-                    height: height * 0.2,
-                    borderRadius: 15,
-                    marginTop: 20,
-                }}
+                style={styles.map}
             />
             <View
-                style={{
-                    height: 60,
-                    borderBottomLeftRadius: 15,
-                    borderBottomRightRadius: 15,
-                    borderWidth: 1,
-                    borderTopWidth: 0,
-                    marginTop: -10,
-                    borderColor: '#e5e5e5',
-                    justifyContent: 'center'
-                }}
+                style={styles.bottomContainer}
             >
-                <View style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    marginLeft: 20,
-                    marginTop: 10
-                }}>
+                <View style={styles.textContainer}>
                     <Text>
                         {seller.city}{','}
                     </Text>
