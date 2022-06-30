@@ -4,14 +4,19 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-         backgroundColor: 'white'
+         backgroundColor: 'white',
     }, 
+    header:{
+        position:'absolute',
+        top: 30,
+        left: 0,
+        right: 0
+    },
     headerContainer: {
-        marginTop: 30, 
         flexDirection: 'row', 
         alignItems: 'center', 
         justifyContent: 'space-between', 
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
     },
     headerLeftContainer: {
         flexDirection: 'row', 
