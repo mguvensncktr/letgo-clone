@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeNavigator from './HomeNavigator';
@@ -6,6 +6,7 @@ import { Foundation, Ionicons, MaterialCommunityIcons, AntDesign, FontAwesome } 
 import CustomTabBarButton from '../components/CustomTabBarButton';
 import MyPostsNavigator from './MyPostsNavigator';
 import MessageNavigator from './MessageNavigator';
+import NotificationNavigator from './NotificationNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +43,7 @@ const TabNavigator = () => {
             />
             <Tab.Screen
                 name="Bildirimler"
-                component={HomeNavigator}
+                component={NotificationNavigator}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <View>
@@ -51,7 +52,7 @@ const TabNavigator = () => {
                                 <Text style={{ color: 'white' }}>2</Text>
                             </View>
                         </View>
-                    )
+                    ),
                 }}
             />
             <Tab.Screen
