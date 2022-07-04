@@ -5,6 +5,7 @@ import HomeNavigator from './HomeNavigator';
 import { Foundation, Ionicons, MaterialCommunityIcons, AntDesign, FontAwesome } from '@expo/vector-icons'
 import CustomTabBarButton from '../components/CustomTabBarButton';
 import MyPostsNavigator from './MyPostsNavigator';
+import MessageNavigator from './MessageNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -65,7 +66,7 @@ const TabNavigator = () => {
             />
             <Tab.Screen
                 name="Sohbet"
-                component={HomeNavigator}
+                component={MessageNavigator}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="message-processing" size={24} color={color} />

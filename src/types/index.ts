@@ -34,3 +34,12 @@ export interface Filtering {
     name: string
 }
 
+export interface Message {
+    id: string,
+    image: string,
+    productName: string,
+    sellerName: string,
+    status: string,
+    time: string 
+}
+
