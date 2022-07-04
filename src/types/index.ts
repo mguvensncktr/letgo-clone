@@ -40,6 +40,7 @@ export interface Message {
     productName: string,
     sellerName: string,
     status: string,
-    time: string 
+    time: string,
+    sellerImage: string
 }
 

@@ -2,9 +2,13 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import styles from './styles'
 import { AntDesign } from '@expo/vector-icons';
+import { Message } from '../../types';
 
+interface IMessageProps {
+    message: Message
+}
 
-const MessageItem = () => {
+const MessageItem = ({ message }: IMessageProps) => {
 
     return (
         <TouchableOpacity
@@ -13,12 +17,12 @@ const MessageItem = () => {
             <View style={styles.container}>
                 <View>
                     <Image
-                        source={{ uri: "https://cdn.dsmcdn.com/mnresize/500/-/ty32/product/media/images/20210326/23/75554837/108939192/1/1_org.jpg" }}
+                        source={{ uri: message?.image }}
                         style={styles.image}
                         resizeMode="cover"
                     />
                     <Image
-                        source={{ uri: "https://m.media-amazon.com/images/I/41Q8uAgjATS._AC_SY1000_.jpg" }}
+                        source={{ uri: message?.sellerImage }}
                         style={styles.ownerImage}
                         resizeMode="cover"
                     />
@@ -27,14 +31,14 @@ const MessageItem = () => {
                     </View>
                 </View>
                 <View style={styles.infoContainer}>
-                    <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">PS5 Standart Edition SSD Oyun Konsolu</Text>
-                    <Text style={styles.sellerTitle}>Güven</Text>
+                    <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">{message?.productName}</Text>
+                    <Text style={styles.sellerTitle}>{message?.sellerName}</Text>
                     <View style={styles.messageStatus}>
                         <AntDesign name="clockcircle" size={14} color="red" />
-                        <Text style={styles.messageStatusText}>Yanıtınızı bekliyor</Text>
+                        <Text style={styles.messageStatusText}>{message?.status}</Text>
                     </View>
                 </View>
-                <Text style={styles.date}>2 days</Text>
+                <Text style={styles.date}>{message?.time}</Text>
             </View>
             <View
                 style={styles.divider}
