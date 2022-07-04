@@ -13,7 +13,7 @@ export default [{
     productName:"PS5 Standart Edition SSD Oyun Konsolu",
     sellerName: "Güven",
     status: "Yanıtınızı bekliyor",
-    time:"7 gün",
+    time:"5 gün",
     sellerImage: "https://m.media-amazon.com/images/I/41Q8uAgjATS._AC_SY1000_.jpg"
 },
 {
@@ -22,6 +22,6 @@ export default [{
     productName:"Apple AirPods 3. Nesil Kulaklık",
     sellerName: "Batın",
     status: "Yanıtınızı bekliyor",
-    time:"4 gün",
+    time:"6 gün",
     sellerImage: "https://data.topquizz.com/distant/quizz/big/0/8/8/6/216880_360c632769.jpg"
 }]
