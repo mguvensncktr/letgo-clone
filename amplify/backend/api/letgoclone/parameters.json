@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "letgoclone",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-07-05T11:57:27.389Z"
+}

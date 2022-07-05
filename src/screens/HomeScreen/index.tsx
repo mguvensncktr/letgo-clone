@@ -1,19 +1,19 @@
 import { ScrollView } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import products from '../../../assets/products';
-import { Product } from '../../types';
-import styles from './styles'
+import { Product } from '../../models';
 import FeaturedProducts from '../../components/FeaturedProducts';
 import MainProducts from '../../components/MainProducts';
 import CategoryFilter from '../../components/CategoryFilter';
 import MessageNotification from '../../components/MessageNotification';
+import { DataStore } from 'aws-amplify';
+
 
 const HomeScreen = () => {
 
     const [productList, setProductList] = useState<Product[]>([])
 
     useEffect(() => {
-        setProductList(products)
+        DataStore.query(Product).then(setProductList)
     }, [])
 
     return (

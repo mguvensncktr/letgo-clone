@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from './styles'
-import { Product } from '../../types'
+import { Product } from '../../models';
 import { Entypo } from '@expo/vector-icons';
 import FeaturedProductItem from '../FeaturedProductItem';
 
@@ -28,7 +28,7 @@ const MainProducts = ({ mainProducts, header, isFiltered }: mainProductProps) =>
             <View style={styles.mainProductsContainer}>
                 {mainProducts.map((item, index) => {
                     return (
-                        <FeaturedProductItem prodType="main" key={index} product={item} />
+                        <FeaturedProductItem prodType="main" key={index} product={item} productId={item.id} />
                     )
                 })}
             </View>

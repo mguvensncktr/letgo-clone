@@ -1,17 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text, ActivityIndicator } from 'react-native'
 import React from 'react'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import styles from './styles';
+import { User } from '../../models'
 
 
+const SellerAddressMap = ({ seller }: { seller: User | undefined }) => {
 
-type SellerProps = {
-    lat: number,
-    long: number,
-    city: string
-}
+    if (!seller) {
+        return <ActivityIndicator size="large" />
+    }
 
-const SellerAddressMap = ({ seller }: { seller: SellerProps }) => {
     return (
         <>
             <MapView

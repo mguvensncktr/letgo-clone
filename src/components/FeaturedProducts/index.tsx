@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native'
 import React from 'react'
 import { Entypo } from '@expo/vector-icons';
-import { Product } from '../../types';
+import { Product } from '../../models';
 import styles from './styles'
 import FeaturedProductItem from '../../components/FeaturedProductItem';
 
@@ -27,7 +27,7 @@ const FeaturedProducts = ({ featuredProducts }: featuredProductsProps) => {
             >
                 {featuredProducts.map((item, index) => {
                     return (
-                        <FeaturedProductItem prodType="favourite" key={index} product={item} />
+                        <FeaturedProductItem prodType="favourite" key={index} productId={item.id} product={item} />
                     )
                 })}
             </ScrollView>

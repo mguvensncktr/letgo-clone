@@ -1,15 +1,16 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import styles from './style';
+import { User } from '../../models'
 
-type SellerProps = {
-    name: string,
-    photo: string,
-    rating: number
-}
 
-const SellerProfile = ({ seller }: { seller: SellerProps }) => {
+const SellerProfile = ({ seller }: { seller: User | undefined }) => {
+
+    if (!seller) {
+        return <ActivityIndicator size="large" />
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.leftContainer}>

@@ -1,24 +1,31 @@
-import { View, Text, ScrollView, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import styles from './styles'
-import { Product } from '../../types'
+import { Product } from '../../models';
 import { FontAwesome, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import ImageCarousel from '../../components/ImageCarousel'
 import { useNavigation } from '@react-navigation/native';
 import ProductDescription from '../../components/ProductDescription';
 import BottomInput from '../../components/BottomInput';
+import { DataStore } from 'aws-amplify';
 
 const ProductDetailsScreen = (props: any) => {
 
-    const [product, setProduct] = useState<Product>(props.route.params.product)
+    const [product, setProduct] = useState<Product>()
     const navigation = useNavigation()
+    const productId = props?.route?.params.productId
+
+
+    useEffect(() => {
+        DataStore.query(Product, productId).then(setProduct)
+    }, [productId])
 
     return (
         <>
             <ScrollView style={styles.container} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 150 }}>
 
                 {/* Image Carousel */}
-                <ImageCarousel images={product.images} />
+                <ImageCarousel images={product?.images} />
                 {/* Header */}
                 <View style={styles.header}>
                     <View style={styles.headerContainer}>

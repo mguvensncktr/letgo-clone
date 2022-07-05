@@ -1,0 +1,35 @@
+type Category @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  src: String!
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  rating: Int!
+  photo: String!
+  lat: Float!
+  long: Float!
+  city: String!
+  products: [Product] @hasMany(indexName: "byUser", fields: ["id"])
+}
+
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  image: String!
+  brand: String!
+  price: Float!
+  rating: Int
+  numReviews: Int!
+  isFeatured: Boolean!
+  name: String!
+  images: [String!]
+  description: String
+  category: Category @hasOne
+  countInStock: Int
+  type: String!
+  time: Int!
+  userID: ID! @index(name: "byUser")
+}
+ 

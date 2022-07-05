@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-letgoclone-staging-104841-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891922272008:role/amplify-letgoclone-staging-104841-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891922272008:role/amplify-letgoclone-staging-104841-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-letgoclone-staging-104841-deployment",
+      "UnauthRoleName": "amplify-letgoclone-staging-104841-unauthRole",
+      "StackName": "amplify-letgoclone-staging-104841",
+      "StackId": "arn:aws:cloudformation:eu-central-1:891922272008:stack/amplify-letgoclone-staging-104841/08f797f0-fc50-11ec-bb69-06e7799c1e4a",
+      "AmplifyAppId": "d8ktqm9nnj5mu"
+    },
+    "categories": {
+      "auth": {
+        "LetgoClone": {}
+      }
+    }
+  }
+}

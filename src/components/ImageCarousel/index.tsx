@@ -1,8 +1,8 @@
-import { View, Text, Image, FlatList, Dimensions } from 'react-native'
+import { View, Text, Image, FlatList, Dimensions, ActivityIndicator } from 'react-native'
 import React, { useState, useRef } from 'react'
 import styles from './styles'
 
-const ImageCarousel = ({ images }: { images: string[] }) => {
+const ImageCarousel = ({ images }: { images: string[] | null | undefined }) => {
 
     const { width } = Dimensions.get('window')
     const [activeIndex, setActiveIndex] = useState(0)
@@ -12,6 +12,10 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
         }
     })
     const viewConfigRef = useRef({ viewAreaCoveragePercentThreshold: 50 })
+
+    if (!images) {
+        return <ActivityIndicator size="large" />
+    }
 
     return (
         <View>
@@ -37,7 +41,7 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
             />
             <View style={styles.dots}>
                 {
-                    images.map((_, index) => {
+                    images?.map((_, index) => {
                         return (
                             <View key={index} style={index === activeIndex ? styles.activeDot : styles.dot} />
                         )
