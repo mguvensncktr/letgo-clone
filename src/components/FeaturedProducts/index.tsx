@@ -6,10 +6,11 @@ import styles from './styles'
 import FeaturedProductItem from '../../components/FeaturedProductItem';
 
 type featuredProductsProps = {
-    featuredProducts: Product[]
+    featuredProducts: Product[],
+    userSub: string
 }
 
-const FeaturedProducts = ({ featuredProducts }: featuredProductsProps) => {
+const FeaturedProducts = ({ featuredProducts, userSub }: featuredProductsProps) => {
 
     return (
         <View style={styles.container}>
@@ -27,7 +28,7 @@ const FeaturedProducts = ({ featuredProducts }: featuredProductsProps) => {
             >
                 {featuredProducts.map((item, index) => {
                     return (
-                        <FeaturedProductItem prodType="favourite" key={index} productId={item.id} product={item} />
+                        <FeaturedProductItem prodType="favourite" key={index} productId={item.id} product={item} userSub={userSub} />
                     )
                 })}
             </ScrollView>

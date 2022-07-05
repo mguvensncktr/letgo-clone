@@ -1,25 +1,34 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles'
-import { Product } from '../../models'
+import { Product, FavouriteProducts } from '../../models'
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import { DataStore } from 'aws-amplify'
 
 type productProps = {
     product: Product,
     prodType: string,
-    productId: string
+    productId: string,
+    userSub: string
 }
 
-const FeaturedProductItem = ({ product, prodType, productId }: productProps) => {
+const FeaturedProductItem = ({ product, prodType, productId, userSub }: productProps) => {
+
 
     const [isLiked, setIsLiked] = useState<boolean>(false);
-
     const navigation = useNavigation();
 
-    const likeProduct = () => {
+    const likeProduct = async () => {
         setIsLiked(!isLiked)
+        await DataStore.save(
+            new FavouriteProducts({
+                userID: userSub,
+                favouriteProductsProductId: productId,
+            })
+        )
     }
+
 
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", { productId, prodType })} style={prodType === "main" ? styles.mainProductContainer : styles.container}>

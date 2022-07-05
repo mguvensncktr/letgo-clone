@@ -1,3 +1,9 @@
+type FavouriteProducts @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  product: Product @hasOne
+}
+
 type Category @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
@@ -13,6 +19,7 @@ type User @model @auth(rules: [{allow: public}]) {
   long: Float!
   city: String!
   products: [Product] @hasMany(indexName: "byUser", fields: ["id"])
+  FavouriteProducts: [FavouriteProducts] @hasMany(indexName: "byUser", fields: ["id"])
 }
 
 type Product @model @auth(rules: [{allow: public}]) {

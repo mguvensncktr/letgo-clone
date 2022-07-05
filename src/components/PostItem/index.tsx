@@ -1,14 +1,21 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Product } from '../../types'
+import { Product, FavouriteProducts } from '../../models';
 import styles from './style'
 import { FontAwesome } from '@expo/vector-icons';
+import { DataStore } from 'aws-amplify'
 
 type PostItemProps = {
     post: Product
 }
 
 const PostItem = ({ post }: PostItemProps) => {
+
+    const deletePost = async () => {
+        const postItem = await DataStore.query(FavouriteProducts, p => p.favouriteProductsProductId("eq", post.id))
+        DataStore.delete(postItem[0])
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.upperContainer}>
@@ -24,7 +31,9 @@ const PostItem = ({ post }: PostItemProps) => {
                         {post.description}
                     </Text>
                 </View>
-                <FontAwesome name="trash-o" size={24} color="#959595" />
+                <TouchableOpacity onPress={deletePost}>
+                    <FontAwesome name="trash-o" size={24} color="#959595" />
+                </TouchableOpacity>
             </View>
             <View
                 style={styles.divider}

@@ -8,10 +8,11 @@ import FeaturedProductItem from '../FeaturedProductItem';
 type mainProductProps = {
     mainProducts: Product[],
     header: string,
-    isFiltered?: boolean
+    isFiltered?: boolean,
+    userSub: string
 }
 
-const MainProducts = ({ mainProducts, header, isFiltered }: mainProductProps) => {
+const MainProducts = ({ mainProducts, header, isFiltered, userSub }: mainProductProps) => {
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
@@ -28,7 +29,7 @@ const MainProducts = ({ mainProducts, header, isFiltered }: mainProductProps) =>
             <View style={styles.mainProductsContainer}>
                 {mainProducts.map((item, index) => {
                     return (
-                        <FeaturedProductItem prodType="main" key={index} product={item} productId={item.id} />
+                        <FeaturedProductItem prodType="main" key={index} product={item} productId={item.id} userSub={userSub} />
                     )
                 })}
             </View>
