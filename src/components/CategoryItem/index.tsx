@@ -6,19 +6,20 @@ import { useNavigation } from '@react-navigation/native'
 
 type categoryProps = {
     category: Category,
+    categoryId: string
 }
 
-const CategoryItem = ({ category }: categoryProps) => {
+const CategoryItem = ({ category, categoryId }: categoryProps) => {
 
     const navigation = useNavigation();
 
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={() => navigation.navigate("CategoryFilter", { selectedCategory: category })}
+            onPress={() => navigation.navigate("CategoryFilter", { selectedCategory: category, categoryId: categoryId })}
         >
             <Image
-                source={category.src}
+                source={{ uri: category.src }}
                 style={styles.categoryImage}
                 resizeMode="contain"
             />

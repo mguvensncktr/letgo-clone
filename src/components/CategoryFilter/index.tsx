@@ -1,16 +1,16 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { ScrollView } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import styles from './styles'
-import categoriesData from '../../../assets/categories'
-import { Category } from '../../types'
+import { Category } from '../../models'
 import CategoryItem from '../CategoryItem'
+import { DataStore } from 'aws-amplify'
 
 const CategoryFilter = () => {
 
     const [categories, setCategories] = useState<Category[]>([])
 
     useEffect(() => {
-        setCategories(categoriesData);
+        DataStore.query(Category).then(setCategories)
         return () => {
             setCategories([])
         }
@@ -25,7 +25,7 @@ const CategoryFilter = () => {
         >
             {categories.map((item: Category, index) => {
                 return (
-                    <CategoryItem category={item} key={index} />
+                    <CategoryItem category={item} key={index} categoryId={item.id} />
                 )
             })}
         </ScrollView>
