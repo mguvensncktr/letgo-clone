@@ -7,13 +7,19 @@ import { DataStore } from 'aws-amplify'
 import { S3Image } from 'aws-amplify-react-native'
 
 type PostItemProps = {
-    post: Product
+    post: Product,
+    type: string
 }
 
-const PostItem = ({ post }: PostItemProps) => {
+const PostItem = ({ post, type }: PostItemProps) => {
 
-    const deletePost = async () => {
+    const deleteFavPost = async () => {
         const postItem = await DataStore.query(FavouriteProducts, p => p.favouriteProductsProductId("eq", post.id))
+        DataStore.delete(postItem[0])
+    }
+
+    const deleteMyPost = async () => {
+        const postItem = await DataStore.query(Product, p => p.id('eq', post.id))
         DataStore.delete(postItem[0])
     }
 
@@ -39,7 +45,7 @@ const PostItem = ({ post }: PostItemProps) => {
                         {post.description}
                     </Text>
                 </View>
-                <TouchableOpacity onPress={deletePost}>
+                <TouchableOpacity onPress={type === 'fav' ? deleteFavPost : deleteMyPost}>
                     <FontAwesome name="trash-o" size={24} color="#959595" />
                 </TouchableOpacity>
             </View>

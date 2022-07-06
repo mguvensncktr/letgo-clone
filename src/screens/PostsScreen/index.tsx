@@ -78,7 +78,7 @@ const PostsScreen = () => {
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item, index }) => {
                             return (
-                                <PostItem post={item.product} />
+                                <PostItem post={item.product} type={"fav"} />
                             )
                         }}
                         stickyHeaderIndices={[0]}
@@ -108,7 +108,7 @@ const PostsScreen = () => {
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item, index }) => {
                             return (
-                                <PostItem post={item} />
+                                <PostItem post={item} type={'myPost'} />
                             )
                         }}
                         stickyHeaderIndices={[0]}
