@@ -31,7 +31,7 @@
 
 ### GIF:
 
--**GIF is laggy because of the size of the gif, its 5 fps.**
+-**GIF is laggy because the size of the gif is too long, its 5 fps.**
 
 <table>
   <tr>
