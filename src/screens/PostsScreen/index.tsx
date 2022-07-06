@@ -8,6 +8,7 @@ import { DataStore, Auth } from 'aws-amplify'
 const PostsScreen = () => {
 
     const [myProducts, setMyProducts] = useState<FavouriteProducts[]>([])
+    const [myPosts, setMyPosts] = useState<Product[]>([])
     const [headers, setHeaders] = useState<string[]>([
         "Favoriler",
         "Satıyor",
@@ -21,8 +22,14 @@ const PostsScreen = () => {
         DataStore.query(FavouriteProducts, f => f.userID("eq", userInfo.attributes.sub)).then(setMyProducts);
     }
 
+    const fetchMyPosts = async () => {
+        const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true })
+        DataStore.query(Product, p => p.userID('eq', userInfo.attributes.sub)).then(setMyPosts);
+    }
+
     useEffect(() => {
         fetchFavProds();
+        fetchMyPosts();
     }, [])
 
     useEffect(() => {
@@ -45,38 +52,87 @@ const PostsScreen = () => {
         fetchProducts();
     }, []);
 
+    useEffect(() => {
+        const subscription = DataStore.observe(FavouriteProducts).subscribe(msg => {
+            fetchFavProds();
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
+    useEffect(() => {
+        const subscription = DataStore.observe(Product).subscribe(msg => {
+            fetchMyPosts();
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
     return (
         <View style={styles.container}>
-            <FlatList
-                data={myProducts}
-                keyExtractor={item => `${item.id}`}
-                showsVerticalScrollIndicator={false}
-                renderItem={({ item, index }) => {
-                    return (
-                        <PostItem post={item.product} />
-                    )
-                }}
-                stickyHeaderIndices={[0]}
-                ListHeaderComponent={() => {
-                    return (
-                        <View style={styles.headers}>
-                            {headers.map((item, index) => {
-                                return (
-                                    <TouchableOpacity key={index} onPress={() => setActiveHeader(item)}>
-                                        <Text style={activeHeader === item ? styles.activeHeaderText : styles.inActiveHeaderText}>{item}</Text>
-                                        {
-                                            activeHeader === item &&
-                                            <View
-                                                style={styles.activeHeaderLine}
-                                            />
-                                        }
-                                    </TouchableOpacity>
-                                )
-                            })}
-                        </View>
-                    )
-                }}
-            />
+            {
+                activeHeader === 'Favoriler' ?
+                    <FlatList
+                        data={myProducts}
+                        keyExtractor={item => `${item.id}`}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item, index }) => {
+                            return (
+                                <PostItem post={item.product} />
+                            )
+                        }}
+                        stickyHeaderIndices={[0]}
+                        ListHeaderComponent={() => {
+                            return (
+                                <View style={styles.headers}>
+                                    {headers.map((item, index) => {
+                                        return (
+                                            <TouchableOpacity key={index} onPress={() => setActiveHeader(item)}>
+                                                <Text style={activeHeader === item ? styles.activeHeaderText : styles.inActiveHeaderText}>{item}</Text>
+                                                {
+                                                    activeHeader === item &&
+                                                    <View
+                                                        style={styles.activeHeaderLine}
+                                                    />
+                                                }
+                                            </TouchableOpacity>
+                                        )
+                                    })}
+                                </View>
+                            )
+                        }}
+                    /> :
+                    <FlatList
+                        data={myPosts}
+                        keyExtractor={item => `${item.id}`}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item, index }) => {
+                            return (
+                                <PostItem post={item} />
+                            )
+                        }}
+                        stickyHeaderIndices={[0]}
+                        ListHeaderComponent={() => {
+                            return (
+                                <View style={styles.headers}>
+                                    {headers.map((item, index) => {
+                                        return (
+                                            <TouchableOpacity key={index} onPress={() => setActiveHeader(item)}>
+                                                <Text style={activeHeader === item ? styles.activeHeaderText : styles.inActiveHeaderText}>{item}</Text>
+                                                {
+                                                    activeHeader === item &&
+                                                    <View
+                                                        style={styles.activeHeaderLine}
+                                                    />
+                                                }
+                                            </TouchableOpacity>
+                                        )
+                                    })}
+                                </View>
+                            )
+                        }}
+                    />
+            }
         </View>
     )
 }

@@ -15,7 +15,7 @@ const ProductDescription = ({ product }: { product: Product | undefined }) => {
     const userId = product?.userID
 
     const fetchSeller = async () => {
-        const seller = await DataStore.query(User, u => u.id("eq", userId));
+        const seller = await DataStore.query(User, u => u.userSub("eq", userId));
         setSeller(seller[0])
     }
 
@@ -26,6 +26,7 @@ const ProductDescription = ({ product }: { product: Product | undefined }) => {
     if (!product && !userId) {
         return <ActivityIndicator size="large" />
     }
+
 
     return (
         <View style={styles.container}>

@@ -1,0 +1,13 @@
+{
+  "resourceName": "letgoclone",
+  "policyUUID": "55d20fd4",
+  "bucketName": "letgoclone53bcb8006ef94f5caa968e1b423e8318",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -1,6 +1,7 @@
-import { View, Text, Image, FlatList, Dimensions, ActivityIndicator } from 'react-native'
+import { View, Image, FlatList, Dimensions, ActivityIndicator } from 'react-native'
 import React, { useState, useRef } from 'react'
 import styles from './styles'
+import { S3Image } from 'aws-amplify-react-native'
 
 const ImageCarousel = ({ images }: { images: string[] | null | undefined }) => {
 
@@ -24,11 +25,16 @@ const ImageCarousel = ({ images }: { images: string[] | null | undefined }) => {
                 keyExtractor={item => `${item}`}
                 renderItem={({ item }) => {
                     return (
-                        <Image
-                            source={{ uri: item }}
-                            style={styles.image}
-                            resizeMode="cover"
-                        />
+                        item.startsWith('http') ?
+                            <Image
+                                source={{ uri: item }}
+                                style={styles.image}
+                                resizeMode="cover"
+                            /> :
+                            <S3Image
+                                imgKey={item}
+                                style={styles.image}
+                            />
                     )
                 }}
                 horizontal

@@ -1,16 +1,29 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeNavigator from './HomeNavigator';
 import { Foundation, Ionicons, MaterialCommunityIcons, AntDesign, FontAwesome } from '@expo/vector-icons'
-import CustomTabBarButton from '../components/CustomTabBarButton';
 import MyPostsNavigator from './MyPostsNavigator';
 import MessageNavigator from './MessageNavigator';
 import NotificationNavigator from './NotificationNavigator';
+import SellNavigator from './SellNavigator';
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+
+    const navigation = useNavigation()
+    const CustomTabBarButton = ({ children, onPress }: any) => {
+        return (
+            <TouchableOpacity
+                style={styles.container}
+                onPress={onPress}
+            >
+                {children}
+            </TouchableOpacity>
+        )
+    }
 
     return (
         <Tab.Navigator
@@ -57,9 +70,9 @@ const TabNavigator = () => {
             />
             <Tab.Screen
                 name="Sat"
-                component={HomeNavigator}
+                component={SellNavigator}
                 options={{
-                    tabBarButton: () => <CustomTabBarButton>
+                    tabBarButton: () => <CustomTabBarButton onPress={() => navigation.navigate('Sat')}>
                         <FontAwesome name="camera" size={20} color={"white"} />
                         <Text style={{ color: 'white' }}>Sat</Text>
                     </CustomTabBarButton>
@@ -86,5 +99,19 @@ const TabNavigator = () => {
         </Tab.Navigator>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        width: 60,
+        height: 60,
+        backgroundColor: '#F24E61',
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: -16,
+        borderWidth: 3,
+        borderColor: 'white'
+    }
+})
 
 export default TabNavigator

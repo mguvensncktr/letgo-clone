@@ -11,9 +11,6 @@ const CategoryFilter = () => {
 
     useEffect(() => {
         DataStore.query(Category).then(setCategories)
-        return () => {
-            setCategories([])
-        }
     }, [])
 
     return (

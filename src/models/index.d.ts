@@ -74,6 +74,7 @@ export declare class User {
   readonly city: string;
   readonly products?: (Product | null)[] | null;
   readonly FavouriteProducts?: (FavouriteProducts | null)[] | null;
+  readonly userSub?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<User, UserMetaData>);

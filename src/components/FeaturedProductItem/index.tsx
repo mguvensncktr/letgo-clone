@@ -5,6 +5,7 @@ import { Product, FavouriteProducts } from '../../models'
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
+import { S3Image } from 'aws-amplify-react-native'
 
 type productProps = {
     product: Product,
@@ -33,11 +34,17 @@ const FeaturedProductItem = ({ product, prodType, productId, userSub }: productP
     return (
         <TouchableOpacity onPress={() => navigation.navigate("ProductDetails", { productId, prodType })} style={prodType === "main" ? styles.mainProductContainer : styles.container}>
             <View style={prodType === "main" ? styles.mainProductImageContainer : styles.imageContainer}>
-                <Image
-                    source={{ uri: product.image }}
-                    resizeMode="cover"
-                    style={styles.image}
-                />
+                {
+                    product.image.startsWith('http') ?
+                        <Image
+                            source={{ uri: product.image }}
+                            resizeMode="cover"
+                            style={styles.image}
+                        /> : <S3Image
+                            imgKey={product.images[1]}
+                            style={styles.image}
+                        />
+                }
                 {prodType === "favourite" && parseInt(product.id) % 2 == 1 && <View style={styles.isFeaturedContainer}>
                     <Text style={styles.isFeaturedText}>Öne Çıkan</Text>
                 </View>

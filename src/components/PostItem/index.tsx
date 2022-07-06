@@ -4,6 +4,7 @@ import { Product, FavouriteProducts } from '../../models';
 import styles from './style'
 import { FontAwesome } from '@expo/vector-icons';
 import { DataStore } from 'aws-amplify'
+import { S3Image } from 'aws-amplify-react-native'
 
 type PostItemProps = {
     post: Product
@@ -19,7 +20,14 @@ const PostItem = ({ post }: PostItemProps) => {
     return (
         <View style={styles.container}>
             <View style={styles.upperContainer}>
-                <Image source={{ uri: post.image }} style={styles.image} resizeMode="cover" />
+                {
+                    post.image.startsWith('http') ?
+                        <Image source={{ uri: post.image }} style={styles.image} resizeMode="cover" /> :
+                        <S3Image
+                            imgKey={post?.images[1]}
+                            style={styles.image}
+                        />
+                }
                 <View style={styles.infoContainer}>
                     <View style={styles.priceContainer}>
                         <FontAwesome name="turkish-lira" size={16} color="black" />

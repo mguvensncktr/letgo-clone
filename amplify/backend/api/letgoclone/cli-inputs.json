@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "letgoclone",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-a039420a-1f3d-454e-be31-01fa7e77bb44/amplify/backend/api/letgoclone/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-4f1f57a0-6c01-4ad1-8bff-05f0c758673f/amplify/backend/api/letgoclone/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "keyDescription": "api key description",
