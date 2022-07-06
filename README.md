@@ -29,6 +29,20 @@
   - **react-native-get-random-values**
   - **uuid**
 
+### GIF:
+
+-**GIF is laggy because of the size of the gif, its 5 fps.**
+
+<table>
+  <tr>
+    <td>App Showcase GIF</td>
+  </tr>
+  
+  <tr>
+    <td><img src="screenshots/gif.gif" alt="letgoclonegif" width=400 height=600></td>
+  </tr>
+ </table>
+
 ### Screenshots:
 
 <table>
