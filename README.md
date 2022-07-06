@@ -1,19 +1,41 @@
-### Netflix Clone with React Native
+### Letgo Clone with React Native, TypeScript and AWS Amplify
+
+### Letgo is an e-commerce app that users can sell their used or brand new products
+
+### Real-time subscriptions for users when they post products, add new favourite product to their baskets
+
+### and deleting posts or favourite products
+
+### Users can filter the products by Categories
+
+### Images of the products are stored in S3
 
 ### Used:
 
-- **Axios** to do API calls
-- **API**: https://api.themoviedb.org/3
-- **RN-Dotenv** to hide the api key
-- **react-native-youtube-iframe** to show trailers of the movies
+- **Stack:**
+
+  - **TypeScript**
+  - **React-Native-Async-Storage**
+  - **React Navigation**
+  - **AWS Amplify**
+    - **AWS DataStore**
+    - **AWS S3**
+    - **AWS GraphQL API**
+
+- **Packages:**
+  - **expo-image-picker**
+  - **react-native-maps**
+  - **react-native-expo-fancy-alerts**
+  - **react-native-get-random-values**
+  - **uuid**
 
 ### Screenshots:
 
 <table>
   <tr>
-    <td>Home Screen Movie Banner</td>
-     <td>Movie Categories</td>
-     <td>Movie Categories - 2</td>
+    <td>Home Screen</td>
+     <td>Message Notification</td>
+     <td>Filter by Category</td>
   </tr>
   
   <tr>
@@ -25,9 +47,9 @@
 
 <table>
   <tr>
-    <td>Movie Detail Modal</td>
-     <td>Movie Detail Modal - Similar Movies</td>
-     <td>Movie Detail Modal - Movie Trailer on Youtube</td>
+    <td>Filter by Category with Products belong to that Category</td>
+     <td>Product Detail Screen</td>
+     <td>Product Detail Screen - 2</td>
   </tr>
   
   <tr>
@@ -39,9 +61,9 @@
  
  <table>
   <tr>
-    <td>New and Popular Screen</td>
-     <td>New and Popular Screen 2</td>
-     <td>Search Screen without a Search Term</td>
+    <td>Product Detail Screen - 3(Changing message dynamically)</td>
+     <td>Notification Screen</td>
+     <td>Messages Screen</td>
   </tr>
   
   <tr>
@@ -53,12 +75,70 @@
 
  <table>
   <tr>
-    <td>Search Screen With a Search Term</td>
-     <td>Downloads Screen</td>
+    <td>Favourite Products Screen</td>
+     <td>Favourite Products Screen - 2(Adding new Favourite Product)</td>
+     <td>Favourite Products Screen - 3(Deleting Product)</td>
   </tr>
   
   <tr>
     <td><img src="screenshots/10.PNG" width=270 height=480></td>
     <td><img src="screenshots/11.PNG" width=270 height=480></td>
+    <td><img src="screenshots/12.PNG" width=270 height=480></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>My Listings Screen</td>
+     <td>Deleting Post from Listings(Deletes from database)</td>
+     <td>Sell Product Screen(Selecting Category)</td>
+  </tr>
+  
+  <tr>
+    <td><img src="screenshots/13.PNG" width=270 height=480></td>
+    <td><img src="screenshots/14.PNG" width=270 height=480></td>
+    <td><img src="screenshots/15.PNG" width=270 height=480></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>Listing Post Detail Screen</td>
+     <td>Listing Post Detail Screen - 2</td>
+     <td>Listing Post Detail Screen - 3</td>
+  </tr>
+  
+  <tr>
+    <td><img src="screenshots/16.PNG" width=270 height=480></td>
+    <td><img src="screenshots/17.PNG" width=270 height=480></td>
+    <td><img src="screenshots/18.PNG" width=270 height=480></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>Listing Post Detail Screen - 4</td>
+     <td>Listing Post Detail Screen - 5</td>
+     <td>Posting</td>
+  </tr>
+  
+  <tr>
+    <td><img src="screenshots/19.PNG" width=270 height=480></td>
+    <td><img src="screenshots/20.PNG" width=270 height=480></td>
+    <td><img src="screenshots/21.PNG" width=270 height=480></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+    <td>Posting Alert</td>
+     <td>Posts updates</td>
+     <td>My Listings updates when user Posts</td>
+  </tr>
+  
+  <tr>
+    <td><img src="screenshots/22.PNG" width=270 height=480></td>
+    <td><img src="screenshots/23.PNG" width=270 height=480></td>
+    <td><img src="screenshots/24.PNG" width=270 height=480></td>
   </tr>
  </table>
